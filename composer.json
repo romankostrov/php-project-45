@@ -15,6 +15,7 @@
         }
     ],
     "require": {
-        "wp-cli/php-cli-tools"
+        "wp-cli/php-cli-tools",
+        "squizlabs/php_codesniffer"
     }
 }
