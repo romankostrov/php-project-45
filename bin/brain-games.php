@@ -1,2 +1,8 @@
 <?php
-print_r ("php bin/brain-games.php Welcome to the Brain Games!")
+// Открываем PHP-тег для начала скрипта
+
+// Выводим строку "Welcome to the Brain Games!" на экран
+echo "Welcome to the Brain Games!\n";
+
+// Закрываем PHP-тег
+?>
