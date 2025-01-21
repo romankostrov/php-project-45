@@ -17,7 +17,8 @@
         }
     ],
     "bin": [
-        "./bin/brain-games"
+        "./bin/brain-games",
+        "./bin/brain-even"
         ],
     "require": {
         "php": ">=7.4",

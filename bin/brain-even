@@ -1,0 +1,45 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
+
+use BrainGames\Cli\Cli;
+
+$cli = new Cli(); // Создаем объект класса Cli
+$cli->greetUser(); // Вызываем метод приветствия
+
+function isEven($number) {
+    return $number % 2 === 0;
+}
+
+function playEvenGame() {
+    echo "Welcome to the Brain Games!\\n";
+    echo "May I have your name? ";
+    $name = trim(fgets(STDIN));
+    echo "Hello, $name!\\n";
+    echo "Answer \\"yes\\" if the number is even, otherwise answer \\"no\\".\\n";
+
+    $correctAnswersNeeded = 3;
+    $correctAnswersCount = 0;
+
+    while ($correctAnswersCount < $correctAnswersNeeded) {
+        $number = rand(1, 100);
+        echo "Question: $number\\n";
+        echo "Your answer: ";
+        $answer = trim(fgets(STDIN));
+
+        $correctAnswer = isEven($number) ? 'yes' : 'no';
+
+        if ($answer === $correctAnswer) {
+            echo "Correct!\\n";
+            $correctAnswersCount++;
+        } else {
+            echo "'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.\\n";
+            echo "Let's try again, $name!\\n";
+            return;
+        }
+    }
+
+    echo "Congratulations, $name!\\n";
+}
+
+playEvenGame();
