@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
-namespace BrainGames\Cli;
-require_once "Src/Cli.php";
-use function cli\line;
-use function cli\prompt;
+require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-run();
+use BrainGames\Cli\Cli;
+
+$cli = new Cli(); // Создаем объект класса Cli
+$cli->greetUser(); // Вызываем метод приветствия

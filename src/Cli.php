@@ -2,12 +2,18 @@
 
 namespace BrainGames\Cli;
 
-use function cli\line;
-use function cli\prompt;
-
-function run(): void
+class Cli
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    public function greetUser()
+    {
+        // Приветствие пользователя
+        echo "Welcome to the Brain Games!\n";
+
+        // Запрашиваем имя пользователя
+        echo "May I have your name? ";
+        $name = trim(fgets(STDIN)); // Считываем имя из stdin
+
+        // Приветствуем пользователя по имени
+        echo "Hello, $name!\n";
+    }
 }
