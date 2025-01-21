@@ -1,45 +1,54 @@
 #!/usr/bin/env php
+
 <?php
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
 use BrainGames\Cli\Cli;
 
-$cli = new Cli(); // Создаем объект класса Cli
-$cli->greetUser(); // Вызываем метод приветствия
-
-function isEven($number) {
+function isEven($number)
+{
     return $number % 2 === 0;
 }
 
-function playEvenGame() {
-    echo "Welcome to the Brain Games!\\n";
-    echo "May I have your name? ";
-    $name = trim(fgets(STDIN));
-    echo "Hello, $name!\\n";
-    echo "Answer \\"yes\\" if the number is even, otherwise answer \\"no\\".\\n";
+function getRandomNumber()
+{
+    return rand(1, 100);
+}
 
-    $correctAnswersNeeded = 3;
+function playGame($userName)
+{
+    echo "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
+
     $correctAnswersCount = 0;
 
-    while ($correctAnswersCount < $correctAnswersNeeded) {
-        $number = rand(1, 100);
-        echo "Question: $number\\n";
-        echo "Your answer: ";
-        $answer = trim(fgets(STDIN));
+    while ($correctAnswersCount < 3) {
+        $number = getRandomNumber();
+        echo "Question: $number\n";
+
+        $userAnswer = trim(fgets(STDIN));
 
         $correctAnswer = isEven($number) ? 'yes' : 'no';
 
-        if ($answer === $correctAnswer) {
-            echo "Correct!\\n";
-            $correctAnswersCount++;
-        } else {
-            echo "'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.\\n";
-            echo "Let's try again, $name!\\n";
+        if ($userAnswer !== $correctAnswer) {
+            echo "'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'.\n";
+            echo "Let's try again, $userName!\n";
             return;
         }
+
+        echo "Correct!\n";
+        $correctAnswersCount++;
     }
 
-    echo "Congratulations, $name!\\n";
+    echo "Congratulations, $userName!\\n";
 }
 
-playEvenGame();
+// Главная функция, которая запускает игру
+function startGame()
+{
+    $cli = new Cli();
+    $userName = $cli->greetUser();
+    playGame($userName);
+}
+
+// Запускаем игру
+startGame();
