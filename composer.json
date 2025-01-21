@@ -1,9 +1,14 @@
 {
     "name": "hexlet/code",
+    "description": "hexlet php-package",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [
+            "src/Cli.php",
+          ]
     },
     "authors": [
         {
@@ -11,8 +16,11 @@
             "email": "rkostrov@yandex.ru"
         }
     ],
-    "require": {},
     "bin": [
         "./bin/brain-games"
-        ]
+        ],
+    "require": {
+        "php": ">=7.4",
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }

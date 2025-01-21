@@ -1,7 +1,8 @@
-<?php
 #!/usr/bin/env php
+<?php
+namespace BrainGames\Cli;
+require_once "Src/Cli.php";
+use function cli\line;
+use function cli\prompt;
 
-echo "Welcome to the Brain Games!\n";
-
-
-?>
+run();
