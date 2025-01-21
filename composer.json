@@ -22,5 +22,8 @@
     "require": {
         "php": ">=7.4",
         "wp-cli/php-cli-tools": "^0.11.11"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.2"
     }
 }
