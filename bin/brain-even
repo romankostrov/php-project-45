@@ -39,7 +39,7 @@ function playGame($userName)
         $correctAnswersCount++;
     }
 
-    echo "Congratulations, $userName!\\n";
+    echo "Congratulations, $userName!\n";
 }
 
 // Главная функция, которая запускает игру

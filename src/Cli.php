@@ -15,5 +15,6 @@ class Cli
 
         // Приветствуем пользователя по имени
         echo "Hello, $name!\n";
+        return $name;
     }
 }
