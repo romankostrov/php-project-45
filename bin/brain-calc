@@ -4,6 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
 use BrainGames\Cli\Cli;
+use BrainGames\Engine\Engine;
 
 
 function getRandomExpression()
@@ -40,7 +41,7 @@ function playGame($userName)
         echo "Correct!\n";
     }
 
-    echo "Congratulations, $userName!\n";
+    echo "Congratulations, $userName!\\n";
 }
 
 // Главный скрипт
