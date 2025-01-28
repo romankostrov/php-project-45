@@ -44,8 +44,13 @@ function playGame($userName)
     echo "Congratulations, $userName!\\n";
 }
 
-// Главный скрипт
-$cli = new Cli();
-$userName = $cli->greetUser();
-playGame($userName);
-?>
+// Главная функция, которая запускает игру
+function startGame()
+{
+    $cli = new Cli();
+    $userName = $cli->greetUser();
+    playGame($userName);
+}
+
+// Запускаем игру
+startGame();

@@ -11,7 +11,7 @@ function isEven($number)
     return $number % 2 === 0;
 }
 
-function getRandomNumber()
+function getRandomExpression()
 {
     return rand(1, 100);
 }
@@ -23,7 +23,7 @@ function playGame($userName)
     $correctAnswersCount = 0;
 
     while ($correctAnswersCount < 3) {
-        $number = getRandomNumber();
+        $number = getRandomExpression();
         echo "Question: $number\n";
 
         $userAnswer = trim(fgets(STDIN));
