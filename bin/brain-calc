@@ -38,7 +38,7 @@ function playGame($userName)
         echo "Correct!\n";
     }
 
-    echo "Congratulations, $userName!\\n";
+    echo "Congratulations, $userName!\n";
 }
 
 // Главная функция, которая запускает игру

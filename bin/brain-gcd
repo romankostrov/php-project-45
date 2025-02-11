@@ -39,7 +39,7 @@ function playGame($userName): void
         }
     }
 
-    line("Congratulations, {$userName}!");
+    echo ("Congratulations, {$userName}!");
 }
 
 // Главная функция, которая запускает игру
