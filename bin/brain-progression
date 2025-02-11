@@ -19,6 +19,7 @@ function generateProgression(int $length = 10): array
 
 function playGame($userName): void
 {
+    $cli = new Cli();
     echo ('What number is missing in the progression?');
 
     for ($i = 0; $i < 3; $i++) {

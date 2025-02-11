@@ -21,14 +21,14 @@ function isPrime(int $number): bool
 }
 
 // Функция для запуска игры
-function playGame(string $userName): void
+function playGame($userName): void
 {
     $cli = new Cli();
     echo "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
 
     for ($i = 0; $i < 3; $i++) {
         $number = rand(1, 30); // Генерируем случайное число
-        echo "Question: {$number}\\n";
+        echo "Question: {$number}\n";
         $answer = strtolower(readline("Your answer: "));
 
         $correctAnswer = isPrime($number) ? 'yes' : 'no';
@@ -36,13 +36,13 @@ function playGame(string $userName): void
         if ($answer === $correctAnswer) {
             echo "Correct!\\n";
         } else {
-            echo "'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.\\n";
-            echo "Let's try again, {$userName}!\\n";
+            echo "'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.\n";
+            echo "Let's try again, {$userName}!\n";
             return;
         }
     }
 
-    echo "Congratulations, {$userName}!\\n";
+    echo "Congratulations, {$userName}!\n";
 }
 
 // Главная функция

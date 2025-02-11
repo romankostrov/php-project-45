@@ -20,6 +20,7 @@ function gcd(int $a, int $b): int
 
 function playGame($userName): void
 {
+    $cli = new Cli();
     echo ('Find the greatest common divisor of given numbers.');
 
     for ($i = 0; $i < 3; $i++) {
