@@ -20,21 +20,21 @@ function gcd(int $a, int $b): int
 
 function playGame($userName): void
 {
-    line('Find the greatest common divisor of given numbers.');
+    echo ('Find the greatest common divisor of given numbers.');
 
     for ($i = 0; $i < 3; $i++) {
         $num1 = rand(1, 100);
         $num2 = rand(1, 100);
         $correctAnswer = gcd($num1, $num2);
 
-        line("Question: {$num1} {$num2}");
+        echo ("Question: {$num1} {$num2}");
         $userAnswer = prompt('Your answer');
 
         if ((int)$userAnswer === $correctAnswer) {
-            line('Correct!');
+            echo ('Correct!');
         } else {
-            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-            line("Let's try again, {$userName}!");
+            echo ("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            echo ("Let's try again, {$userName}!");
             return;
         }
     }
