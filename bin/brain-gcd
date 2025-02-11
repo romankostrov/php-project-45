@@ -6,3 +6,49 @@ require __DIR__ . '/../vendor/autoload.php'; // Подключаем автоз�
 use BrainGames\Cli\Cli;
 use BrainGames\Engine\Engine;
 
+
+
+function gcd(int $a, int $b): int
+{
+    while ($b != 0) {
+        $temp = $b;
+        $b = $a % $b;
+        $a = $temp;
+    }
+    return $a;
+}
+
+function playGame($userName): void
+{
+    line('Find the greatest common divisor of given numbers.');
+
+    for ($i = 0; $i < 3; $i++) {
+        $num1 = rand(1, 100);
+        $num2 = rand(1, 100);
+        $correctAnswer = gcd($num1, $num2);
+
+        line("Question: {$num1} {$num2}");
+        $userAnswer = prompt('Your answer');
+
+        if ((int)$userAnswer === $correctAnswer) {
+            line('Correct!');
+        } else {
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$userName}!");
+            return;
+        }
+    }
+
+    line("Congratulations, {$userName}!");
+}
+
+// Главная функция, которая запускает игру
+function startGame()
+{
+    $cli = new Cli();
+    $userName = $cli->greetUser();
+    playGame($userName);
+}
+
+// Запускаем игру
+startGame();
