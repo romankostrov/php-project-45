@@ -34,7 +34,7 @@ function playGame($userName): void
         $correctAnswer = isPrime($number) ? 'yes' : 'no';
 
         if ($answer === $correctAnswer) {
-            echo "Correct!\\n";
+            echo "Correct!\n";
         } else {
             echo "'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.\n";
             echo "Let's try again, {$userName}!\n";

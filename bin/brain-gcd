@@ -29,7 +29,7 @@ function playGame($userName): void
         $correctAnswer = gcd($num1, $num2);
 
         echo ("Question: {$num1} {$num2}");
-        $userAnswer = prompt('Your answer');
+        $userAnswer = echo ('Your answer');
 
         if ((int)$userAnswer === $correctAnswer) {
             echo ('Correct!');
