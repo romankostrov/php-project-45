@@ -30,12 +30,14 @@ function playGame($userName): void
         $question = implode(' ', $progression);
 
         echo ("Question: {$question}");
-        $answer = prompt('Your answer');
+        echo "Your answer: ";
+        $userAnswer = trim(fgets(STDIN));
 
-        if ((int) $answer === $hiddenValue) {
+
+        if ((int) $userAnswer === $hiddenValue) {
             echo ('Correct!');
         } else {
-            echo ("'{$answer}' is wrong answer ;(. Correct answer was '{$hiddenValue}'.");
+            echo ("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$hiddenValue}'.");
             echo ("Let's try again, {$userName}!");
             return;
         }
