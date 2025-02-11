@@ -1,0 +1,56 @@
+#!/usr/bin/env php
+
+<?php
+require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
+
+use BrainGames\Cli\Cli;
+use BrainGames\Engine\Engine;
+
+// Функция для определения, является ли число простым
+function isPrime(int $number): bool
+{
+    if ($number <= 1) {
+        return false;
+    }
+    for ($i = 2; $i <= sqrt($number); $i++) {
+        if ($number % $i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Функция для запуска игры
+function playGame(string $userName): void
+{
+    $cli = new Cli();
+    echo "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
+
+    for ($i = 0; $i < 3; $i++) {
+        $number = rand(1, 30); // Генерируем случайное число
+        echo "Question: {$number}\\n";
+        $answer = strtolower(readline("Your answer: "));
+
+        $correctAnswer = isPrime($number) ? 'yes' : 'no';
+
+        if ($answer === $correctAnswer) {
+            echo "Correct!\\n";
+        } else {
+            echo "'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.\\n";
+            echo "Let's try again, {$userName}!\\n";
+            return;
+        }
+    }
+
+    echo "Congratulations, {$userName}!\\n";
+}
+
+// Главная функция
+function startGame(): void
+{
+    $cli = new Cli();
+    $userName = $cli->greetUser();
+    playGame($userName);
+}
+
+startGame();
