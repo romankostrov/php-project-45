@@ -17,11 +17,11 @@ function generateProgression(int $length = 10): array
     return $progression;
 }
 
-function playGame(string $userName, int $rounds = 3): void
+function playGame($userName): void
 {
     line('What number is missing in the progression?');
 
-    for ($i = 0; $i < $rounds; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $progression = generateProgression(rand(5, 10));
         $hiddenIndex = array_rand($progression);
         $hiddenValue = $progression[$hiddenIndex];
