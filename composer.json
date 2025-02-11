@@ -19,9 +19,9 @@
     "bin": [
         "./bin/brain-games",
         "./bin/brain-even",
-        "./bin/brain-calc"
-        "./bin/brain-gcd"
-        "./bin/brain-prime"
+        "./bin/brain-calc",
+        "./bin/brain-gcd",
+        "./bin/brain-prime",
         "./bin/brain-progression"
         ],
     "require": {
