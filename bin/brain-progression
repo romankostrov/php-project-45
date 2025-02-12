@@ -20,7 +20,7 @@ function generateProgression(int $length = 10): array
 function playGame($userName): void
 {
     $cli = new Cli();
-    echo ('What number is missing in the progression?');
+    echo ("What number is missing in the progression?\n");
 
     for ($i = 0; $i < 3; $i++) {
         $progression = generateProgression(rand(5, 10));
@@ -29,21 +29,21 @@ function playGame($userName): void
         $progression[$hiddenIndex] = '..';
         $question = implode(' ', $progression);
 
-        echo ("Question: {$question}");
+        echo ("Question: {$question}\n");
         echo "Your answer: ";
         $userAnswer = trim(fgets(STDIN));
 
 
         if ((int) $userAnswer === $hiddenValue) {
-            echo ('Correct!');
+            echo ("Correct!\n");
         } else {
-            echo ("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$hiddenValue}'.");
-            echo ("Let's try again, {$userName}!");
+            echo ("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$hiddenValue}'.\n");
+            echo ("Let's try again, {$userName}!\n");
             return;
         }
     }
 
-    echo ("Congratulations, {$userName}!");
+    echo ("Congratulations, {$userName}!\n");
 }
 
 // Главная функция, которая запускает игру

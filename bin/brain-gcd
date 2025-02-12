@@ -28,15 +28,15 @@ function playGame($userName): void
         $num2 = rand(1, 100);
         $correctAnswer = gcd($num1, $num2);
 
-        echo ("Question: {$num1} {$num2}");
+        echo ("Question: {$num1} {$num2}\n");
         echo "Your answer: ";
         $userAnswer = trim(fgets(STDIN));
 
         if ((int)$userAnswer === $correctAnswer) {
-            echo ('Correct!');
+            echo ("Correct!\n");
         } else {
-            echo ("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
-            echo ("Let's try again, {$userName}!");
+            echo ("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'\n");
+            echo ("Let's try again, {$userName}!\n");
             return;
         }
     }
