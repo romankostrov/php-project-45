@@ -46,9 +46,9 @@ function playGame($userName): void
 // Главная функция, которая запускает игру
 function startGame()
 {
-    $userName = greetUser(); // Вызываем функцию greetUser
+    $userName = trim(greetUser()); // Вызываем функцию greetUser
     playGame($userName);
-}
+}   
 
 // Запускаем игру
 startGame();
