@@ -2,6 +2,8 @@
 
 namespace Games\BrainCalc;
 
+require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
+
 use function BrainGames\Engine\runGame;
 
 function getRandomExpression(): array
@@ -40,5 +42,3 @@ function brainCalc(): void
 
     runGame($description, $getRoundData);
 }
-
-brainCalc ();

@@ -2,12 +2,6 @@
 
 namespace BrainGames\Engine;
 
-require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
-
-<?php
-
-namespace BrainGames\Engine;
-
 use function cli\line;
 use function cli\prompt;
 
