@@ -2,9 +2,11 @@
 
 namespace Games\BrainCalc;
 
+use function BrainGames\Engine\runGame;
+
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-use function BrainGames\Engine\runGame;
+
 
 function getRandomExpression(): array
 {

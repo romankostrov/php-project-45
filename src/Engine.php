@@ -15,11 +15,8 @@ const ROUNDS_COUNT = 3;
  *
  * @return void
  */
-function runGame(string $description, callable $getRoundData): void
+function runGame(string $description, callable $getRoundData, string $name): void
 {
-    line("Welcome to the Brain Games!");
-    $userName = prompt("May I have your name?");
-    line("Hello, %s!", $userName);
     line($description);
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
@@ -32,10 +29,10 @@ function runGame(string $description, callable $getRoundData): void
             line("Correct!");
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
-            line("Let's try again, %s!", $userName);
+            line("Let's try again, %s!", $name);
             return;
         }
     }
 
-    line("Congratulations, %s!", $userName);
+    line("Congratulations, %s!", $name);
 }

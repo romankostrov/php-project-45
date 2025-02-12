@@ -1,7 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+use function Games\BrainCalc\brainCalc;
+
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
-require __DIR__ . '/../../Games/BrainCalc.php';
 
 brainCalc();
