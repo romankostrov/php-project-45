@@ -4,7 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
 use BrainGames\Cli\Cli;
-use BrainGames\Engine\Engine;
+use function BrainGames\Cli\greetUser; // Импортируем функцию greetUser
 
 function generateProgression(int $length = 10): array
 {
@@ -19,7 +19,6 @@ function generateProgression(int $length = 10): array
 
 function playGame($userName): void
 {
-    $cli = new Cli();
     echo ("What number is missing in the progression?\n");
 
     for ($i = 0; $i < 3; $i++) {
@@ -49,8 +48,7 @@ function playGame($userName): void
 // Главная функция, которая запускает игру
 function startGame()
 {
-    $cli = new Cli();
-    $userName = $cli->greetUser();
+    $userName = greetUser(); // Вызываем функцию greetUser
     playGame($userName);
 }
 

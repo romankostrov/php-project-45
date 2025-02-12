@@ -4,7 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
 use BrainGames\Cli\Cli;
-use BrainGames\Engine\Engine;
+use function BrainGames\Cli\greetUser; // Импортируем функцию greetUser
 
 
 
@@ -20,9 +20,7 @@ function gcd(int $a, int $b): int
 
 function playGame($userName): void
 {
-    $cli = new Cli();
     echo ('Find the greatest common divisor of given numbers.');
-
     for ($i = 0; $i < 3; $i++) {
         $num1 = rand(1, 100);
         $num2 = rand(1, 100);
@@ -47,8 +45,7 @@ function playGame($userName): void
 // Главная функция, которая запускает игру
 function startGame()
 {
-    $cli = new Cli();
-    $userName = $cli->greetUser();
+    $userName = greetUser(); // Вызываем функцию greetUser
     playGame($userName);
 }
 

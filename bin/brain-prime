@@ -4,7 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
 use BrainGames\Cli\Cli;
-use BrainGames\Engine\Engine;
+use function BrainGames\Cli\greetUser; // Импортируем функцию greetUser
 
 // Функция для определения, является ли число простым
 function isPrime(int $number): bool
@@ -23,7 +23,6 @@ function isPrime(int $number): bool
 // Функция для запуска игры
 function playGame($userName): void
 {
-    $cli = new Cli();
     echo "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
 
     for ($i = 0; $i < 3; $i++) {
@@ -45,12 +44,12 @@ function playGame($userName): void
     echo "Congratulations, {$userName}!\n";
 }
 
-// Главная функция
-function startGame(): void
+// Главная функция, которая запускает игру
+function startGame()
 {
-    $cli = new Cli();
-    $userName = $cli->greetUser();
+    $userName = greetUser(); // Вызываем функцию greetUser
     playGame($userName);
 }
 
+// Запускаем игру
 startGame();
