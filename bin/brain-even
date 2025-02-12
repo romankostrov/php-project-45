@@ -2,7 +2,6 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-use BrainGames\Cli\Cli;
 use function BrainGames\Cli\greetUser; // Импортируем функцию greetUser
 
 function isEven($number)
