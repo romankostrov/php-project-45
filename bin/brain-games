@@ -2,4 +2,4 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-use function BrainGames\Cli\greetUser; // Импортируем функцию greetUser
+echo ("Welcome to the Brain Games!\n");
