@@ -10,11 +10,11 @@
         "files": [
             "src/Cli.php",
             "src/Engine.php",
-            "src/Game/BrainEven.php",
-            "src/Game/BrainCalc.php",
-            "src/Game/BrainGcd.php",
-            "src/Game/BrainProgression.php",
-            "src/Game/BrainPrime.php"
+            "src/Games/BrainEven.php",
+            "src/Games/BrainCalc.php",
+            "src/Games/BrainGcd.php",
+            "src/Games/BrainProgression.php",
+            "src/Games/BrainPrime.php"
           ]
     },
     "authors": [
@@ -24,12 +24,12 @@
         }
     ],
     "bin": [
-        "./bin/brain-games",
-        "./bin/brain-even",
-        "./bin/brain-calc",
-        "./bin/brain-gcd",
-        "./bin/brain-prime",
-        "./bin/brain-progression"
+        "/bin/brain-games",
+        "/bin/brain-even",
+        "/bin/brain-calc",
+        "/bin/brain-gcd",
+        "/bin/brain-prime",
+        "/bin/brain-progression"
         ],
     "require": {
         "php": ">=7.4",
