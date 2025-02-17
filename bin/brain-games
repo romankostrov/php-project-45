@@ -2,12 +2,11 @@
 <?php
 namespace BrainGames\Games;
 
-$autoloadPath1 = __DIR__ . '/../../../autoload.php';
-$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-if (file_exists($autoloadPath1)) {
-    require_once $autoloadPath1;
-} else {
-    require_once $autoloadPath2;
-}
-run();
+use function cli\line;
+use function cli\prompt;
+
+line('Welcome to the Brain Games!');
+$name = prompt('May I have your name?');
+line("Hello, %s!", $name);
