@@ -1,20 +1,42 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Calc;
 
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\Engine\runGame;
 
-//Вопрос-ответ по логике игры "Калькулятор". Возвращает ответ юзера и правльный ответ.
-function run_BrainCalc_logic(): array
+function getRandomExpression(): array
 {
-    $random_num1 = getRandNum();
-    $random_num2 = getRandNum();
-    $operation = getRandOperationForCalc();
-    line("Question: $random_num1 $operation $random_num2");
-    $answer = prompt('Your answer');
-    $right_answer = eval('return ' . $random_num1 . $operation . $random_num2 . ';');
-    return [$answer, $right_answer];
+    $operations = ['+', '-', '*'];
+    $num1 = rand(1, 20);
+    $num2 = rand(1, 20);
+    $operation = $operations[array_rand($operations)];
+
+    $expression = "$num1 $operation $num2";
+
+    switch ($operation) {
+        case '+':
+            $result = $num1 + $num2;
+            break;
+        case '-':
+            $result = $num1 - $num2;
+            break;
+        case '*':
+            $result = $num1 * $num2;
+            break;
+        default:
+            throw new \Exception("Unknown operation: {$operation}");
+    }
+
+    return ['expression' => $expression, 'result' => (string)$result];
+}
+function brainCalc(): void
+{
+    $description = "What is the result of the expression?";
+    $getRoundData = function (): array {
+        return getRandomExpression();
+    };
+
+    runGame($description, $getRoundData);
 }
