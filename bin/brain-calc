@@ -46,7 +46,7 @@ function startGame()
 {
     $userName = trim(greetUser()); // Вызываем функцию greetUser
     playGame($userName);
-}   
+}
 
 // Запускаем игру
 startGame();
