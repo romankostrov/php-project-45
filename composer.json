@@ -5,9 +5,16 @@
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
+            
         },
         "files": [
-            "src/Cli.php"
+            "src/Cli.php",
+            "src/Engine.php",
+            "src/Games/BrainEven.php",
+            "src/Games/BrainCalc.php",
+            "src/Games/BrainGcd.php",
+            "src/Games/BrainProgression.php",
+            "src/Games/BrainPrime.php"
           ]
     },
     "authors": [
@@ -17,12 +24,12 @@
         }
     ],
     "bin": [
-        "./bin/brain-games",
-        "./bin/brain-even",
-        "./bin/brain-calc",
-        "./bin/brain-gcd",
-        "./bin/brain-prime",
-        "./bin/brain-progression"
+        "/bin/brain-games",
+        "/bin/brain-even",
+        "/bin/brain-calc",
+        "/bin/brain-gcd",
+        "/bin/brain-prime",
+        "/bin/brain-progression"
         ],
     "require": {
         "php": ">=7.4",
