@@ -2,11 +2,17 @@
 
 namespace BrainGames\Engine;
 
-require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
-
 use function cli\line;
 use function cli\prompt;
 
+/**
+ * Общая логика для запуска игр.
+ *
+ * @param string $description Описание игры.
+ * @param callable $getRoundData Функция, возвращающая данные для одного раунда игры (вопрос и правильный ответ).
+ *
+ * @return void
+ */
 function runGame(string $description, callable $getRoundData): void
 {
     line("Welcome to the Brain Games!");
