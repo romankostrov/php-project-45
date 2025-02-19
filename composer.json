@@ -33,8 +33,7 @@
         ],
     "require": {
         "php": ">=7.4",
-        "wp-cli/php-cli-tools": "^0.11.11",
-        "cli/cli": "^1.0"
+        "wp-cli/php-cli-tools": "^0.11.11"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.11"
