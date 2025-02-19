@@ -5,7 +5,6 @@ namespace BrainGames\Games\BrainCalc;
 use function BrainGames\Engine\runGame;
 
 function getRandomExpression(): array
-
 {
     $operations = ['+', '-', '*'];
     $num1 = rand(1, 20);
