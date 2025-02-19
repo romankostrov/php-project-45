@@ -1,54 +1,8 @@
 #!/usr/bin/env php
-
 <?php
+
+namespace BrainGames\Games\BrainPrime;
+
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-use function BrainGames\Cli\greetUser; // Импортируем функцию greetUser
-
-// Функция для определения, является ли число простым
-function isPrime(int $number): bool
-{
-    if ($number <= 1) {
-        return false;
-    }
-    for ($i = 2; $i <= sqrt($number); $i++) {
-        if ($number % $i === 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
-// Функция для запуска игры
-function playGame($userName): void
-{
-    echo "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
-
-    for ($i = 0; $i < 3; $i++) {
-        $number = rand(1, 30); // Генерируем случайное число
-        echo "Question: {$number}\n";
-        $answer = strtolower(readline("Your answer: "));
-
-        $correctAnswer = isPrime($number) ? 'yes' : 'no';
-
-        if ($answer === $correctAnswer) {
-            echo "Correct!\n";
-        } else {
-            echo "'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.\n";
-            echo "Let's try again, {$userName}!\n";
-            return;
-        }
-    }
-
-    echo "Congratulations, {$userName}!\n";
-}
-
-// Главная функция, которая запускает игру
-function startGame()
-{
-    $userName = trim(greetUser()); // Вызываем функцию greetUser
-    playGame($userName);
-}   
-
-// Запускаем игру
-startGame();
+brainPrime();

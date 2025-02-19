@@ -1,52 +1,8 @@
 #!/usr/bin/env php
 <?php
+
+namespace BrainGames\Games\BrainEven;
+
 require __DIR__ . '/../vendor/autoload.php'; // Подключаем автозагрузчик Composer
 
-use function BrainGames\Cli\greetUser; // Импортируем функцию greetUser
-
-function isEven($number)
-{
-    return $number % 2 === 0;
-}
-
-function getRandomExpression()
-{
-    return rand(1, 100);
-}
-
-function playGame($userName)
-{
-    echo "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
-
-    $correctAnswersCount = 0;
-
-    while ($correctAnswersCount < 3) {
-        $number = getRandomExpression();
-        echo "Question: $number\n";
-
-        $userAnswer = trim(fgets(STDIN));
-
-        $correctAnswer = isEven($number) ? 'yes' : 'no';
-
-        if ($userAnswer !== $correctAnswer) {
-            echo "'$userAnswer' is wrong answer ;(. Correct answer was '$correctAnswer'.\n";
-            echo "Let's try again, $userName!\n";
-            return;
-        }
-
-        echo "Correct!\n";
-        $correctAnswersCount++;
-    }
-
-    echo "Congratulations, $userName!\n";
-}
-
-// Главная функция, которая запускает игру
-function startGame()
-{
-    $userName = trim(greetUser()); // Вызываем функцию greetUser
-    playGame($userName);
-}   
-
-// Запускаем игру
-startGame();
+brainEven();
