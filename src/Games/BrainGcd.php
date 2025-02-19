@@ -14,7 +14,7 @@ function gcd(int $a, int $b): int
     return $a;
 }
 
-function brainGcd(): void
+function runBrainGcd(): void
 {
     $description = "Find the greatest common divisor of given numbers.";
     $getQuestionAnswer = function (): array {

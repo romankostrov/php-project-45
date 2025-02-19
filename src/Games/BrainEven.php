@@ -9,7 +9,7 @@ function isEven(int $number): bool
     return $number % 2 === 0;
 }
 
-function brainEven(): void
+function runBrainEven(): void
 {
     $description = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
     $getQuestionAnswer = function (): array {

@@ -15,7 +15,7 @@ function generateProgression(int $length): array
     return $progression;
 }
 
-function brainProgression(): void
+function runBrainProgression(): void
 {
     $description = "What number is missing in the progression?";
     $getQuestionAnswer = function (): array {

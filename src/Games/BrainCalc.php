@@ -4,6 +4,8 @@ namespace BrainGames\Games\BrainCalc;
 
 use function BrainGames\Engine\runGame;
 
+const CONSTANT = 'What is the result of the expression?';
+
 function getRandomExpression(): array
 {
     $operations = ['+', '-', '*'];
@@ -25,9 +27,9 @@ function getRandomExpression(): array
     return ['expression' => $expression, 'result' => (string)$result];
 }
 
-function brainCalc(): void
+function runBrainCalc(): void
 {
-    $description = "What is the result of the expression?";
+    $description = CONSTANT;
     $getQuestionAnswer = function (): array {
         $data = getRandomExpression();
         return [$data['expression'], $data['result']];
